@@ -22,7 +22,9 @@ jobs:
       run: npm install
 
     - name: Run tests
-      run: npm test
+      run: |
+        npm install -g mocha
+        mocha 'tests/**/*.js'
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
